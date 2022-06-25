@@ -10,15 +10,15 @@ body {
     set the visible portion of an element using 'clip' property
  */
 span[class~="sr-only"] {
-    border: 0;
-    clip: rect(1px 1px 1px 1px);
-    clip-path: inset(50%);
-    -webkit-clip-path: inset(50%);
-    overflow: hidden;
-    white-space: nowrap;
-    position: absolute;
-    margin: -1px;
-    padding: 0;
+    border: 0 !important;
+    clip: rect(1px 1px 1px 1px) !important;
+    clip-path: inset(50%) !important;
+    -webkit-clip-path: inset(50%) !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    position: absolute !important;
+    margin: -1px !important;
+    padding: 0 !important;
 }
 
 h1 {
@@ -62,4 +62,99 @@ section {
     top: 0;
     color: #fff;
     background-color: #0a0a23;
+    z-index: 999; /*this ensures years do not get hidden*/
+    margin: 0 -2px;
+    padding: 0.5rem calc(1.25rem  + 2px) 0.5rem 0;
 }
+
+
+/*
+The span[class] syntax will target any span
+ element that has a class attribute set, 
+regardless of the attribute's value. 
+*/
+#years span[class] {
+ font-weight: bold;
+ text-align: right;
+ width: 4.5rem;
+}
+
+.table-wrap {
+    padding: 0 0.75rem 1.5rem 0.75rem;
+  }
+
+  table {
+    border-collapse: collapse;
+    border: 0;
+    width: 100%;
+    position: relative;
+    margin-top: 3rem;
+  }
+
+  table caption {
+    color: #356eaf;
+    font-size: 1.3em;
+    font-weight: normal;
+    position: absolute;
+    top: -2.25rem;
+    left: 0.5rem;
+  }
+
+  tbody td {
+    width: 100vw;
+    min-width: 4rem;
+    max-width: 4rem;
+  }
+
+  tbody th {
+    width: calc(100% - 12rem);
+  }
+
+  tr[class="total"] {
+    border-bottom: 4px double #0a0a23;
+    font-weight: bold;
+  }
+
+  tr[class="total"] th {
+    text-align: left;
+    padding: 0.5rem 0 0.25rem 0.5rem;
+  }
+
+  tr.total td {
+    text-align: right;
+    padding: 0 0.25rem;
+  }
+
+  tr.total td:nth-of-type(3) {
+    padding: 0.5rem;
+  }
+
+  tr.total:hover {
+    background-color: #99c9ff;
+  }
+
+  td.current {
+    font-style: italic;
+  }
+
+  tr.data {
+    background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+  }
+
+  tr.data th {
+   text-align: left;
+   padding: 0.3rem 0.5rem;
+  }
+
+  tr.data th .description {
+    display: block;
+    font-style: italic;
+    font-weight: normal;
+    padding: 1rem 0 0.75rem;
+    margin-right: -13.5rem;
+  }
+  tr.data td {
+    vertical-align: top;
+    text-align: right;
+    padding: 0.3rem 0.25rem 0;
+  }
